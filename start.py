@@ -52,45 +52,49 @@ for x in range(0,101,5):
     time.sleep(1)
     cmd("clear")
 
+def main():
+	time.sleep(1)
+	cmd("clear")
+	print("Actualizando...")
+	cmd("clear")
+	cmd("apt update && y")
+	time.sleep(1)
+	print("Actualizando...")
+	cmd("apt upgrade && y")
+	time.sleep(1)
+	try:
+		cmd("apt-cache policy nano")
+		print("""
 
-time.sleep(1)
-cmd("clear")
-print("Actualizando...")
-cmd("clear")
-cmd("apt update && y")
-time.sleep(1)
-print("Actualizando...")
-cmd("apt upgrade && y")
-time.sleep(1)
-try:
-        cmd("apt-cache policy nano")
-        print("""
+				[!] editor nano instalado!
 
-			[!] editor nano instalado!
+				""")
+	except:
+		cmd("apt install nano && y")
+		print("""
 
-			""")
-except:
-        cmd("apt install nano && y")
-        print("""
+				[x] no tiene nano instalado, instalando...
 
-			[x] no tiene nano instalado, instalando...
+				""")
+	time.sleep(1)
+	print("Configurando sshd_config para aceptar contraseñas...")
+	cmd("nano /etc/ssh/sshd_config")
+	time.sleep(3)
+	print("Cambiando Contraseña:")
+	cmd("clear")
+	print("Ingrese su contraseña 2 veces:")
+	cmd("passwd")
+	print("Contraseña cambiada con exito!")
+	time.sleep(3)
+	cmd("clear")
+	print("Restaurando sshd y ssh ...")
+	cmd("service sshd restart")
+	cmd("service ssh restart")
+	time.sleep(3)
+	print("""
+		Listo!
+		""")
 
-			""")
-time.sleep(1)
-print("Configurando sshd_config para aceptar contraseñas...")
-#cmd("nano /etc/ssh/sshd_config")
-time.sleep(3)
-print("Cambiando Contraseña:")
-cmd("clear")
-print("Ingrese su contraseña 2 veces:")
-cmd("passwd")
-print("Contraseña cambiada con exito!")
-time.sleep(3)
-cmd("clear")
-print("Restaurando sshd y ssh ...")
-cmd("service sshd restart")
-cmd("service ssh restart")
-time.sleep(3)
-print("""
-        Listo!
-        """)
+if __name__=='__main__':
+	main()
+	exit()
