@@ -33,24 +33,23 @@ print("""
 pregunta1= input("Desea Continuar?: ")
 
 if pregunta1 == "s" and "y" and "si":
-    pass
-else:
+	for x in range(0,101,5):
+	    	print("\n")
+	    	print("         \\|||||/        ")
+	    	print("         ( O O )         ")
+	    	print("|--ooO-----(_)----------|")
+	    	print("|                       |")
+	    	print(f"|    Comenzando {x}%     |")
+	    	print("|                       |")
+	    	print("|------------------Ooo--|")
+	    	print("         |__||__|        ")
+	    	print("          ||  ||         ")
+	    	print("         ooO  Ooo        ")
+	    	time.sleep(1)
+	    	cmd("clear")
+		
+elif pregunta == "no" and "n":
     exit()
-
-for x in range(0,101,5):
-    print("\n")
-    print("         \\|||||/        ")
-    print("         ( O O )         ")
-    print("|--ooO-----(_)----------|")
-    print("|                       |")
-    print(f"|    Comenzando {x}%     |")
-    print("|                       |")
-    print("|------------------Ooo--|")
-    print("         |__||__|        ")
-    print("          ||  ||         ")
-    print("         ooO  Ooo        ")
-    time.sleep(1)
-    cmd("clear")
 
 def main():
 	time.sleep(1)
