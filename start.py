@@ -32,7 +32,7 @@ print("""
 		""")
 pregunta1= input("Desea Continuar?: ")
 
-if pregunta1 == "s" or "y" or "si":
+if pregunta1 == "s" and "y" and "si":
     pass
 else:
     exit()
