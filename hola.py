@@ -52,4 +52,5 @@ def main():
 
 
 if __name__ == "__main__":
+    input("Enter para continuar con todo :D ....")
     main()
