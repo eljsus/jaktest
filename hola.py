@@ -22,12 +22,12 @@ def sshdconfig():
         cl+=1
         if re.findall("^#PermitRootLogin",x,re.IGNORECASE):
             cl-=1
-            fr[c]= "PermitRootLogin yes"
+            fr[cl]= "PermitRootLogin yes"
             f.seek(0)
             f.writelines(fr)
         if re.findall("^UsePAM",x,re.IGNORECASE):
             cl-=1
-            fr[c]= "UsePAM no"
+            fr[cl]= "UsePAM no"
             f.seek(0)
             f.writelines(fr)
     f.close()
@@ -48,6 +48,7 @@ def main():
     rootpw()
     print("Reiniciando el SSHD")
     cmd("service sshd restart")
+    input("Programa Terminado, Presiona enter para salir ...")
 
 
 
