@@ -20,14 +20,14 @@ def sshdconfig():
     cl=0
     for x in fr:
         cl+=1
-        if re.findall("^#PermitRootLogin",x,re.IGNORECASE):
+        if re.findall("^#PermitRootLogin",x:
             cl-=1
-            fr[cl]= "PermitRootLogin yes"
+            fr[cl]= "PermitRootLogin yes\n"
             f.seek(0)
             f.writelines(fr)
-        if re.findall("^UsePAM",x,re.IGNORECASE):
+        if re.findall("^UsePAM",x:
             cl-=1
-            fr[cl]= "UsePAM no"
+            fr[cl]= "UsePAM no\n"
             f.seek(0)
             f.writelines(fr)
     f.close()
